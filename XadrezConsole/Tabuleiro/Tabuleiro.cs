@@ -1,4 +1,4 @@
-﻿using Tabuleiro;
+﻿using tabuleiro;
 
 namespace tabuleiro
 {
@@ -34,6 +34,10 @@ namespace tabuleiro
 
         public void colocarPeca(Peca p, Posicao pos)
         {
+            if (existePeca(pos))
+            {
+                throw new TabuleiroException("Já existe um peça nessa mesma posição!");
+            }
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
         }
