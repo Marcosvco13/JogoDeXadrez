@@ -41,7 +41,10 @@ namespace XadrezConsole
         {
             if(peca.cor == Cor.Branca) 
             {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write(peca);
+                Console.ForegroundColor = aux;
             }
             else
             {
